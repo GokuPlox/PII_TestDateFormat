@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System;
 namespace TestDateFormat;
 
 /// <summary>
@@ -16,6 +17,13 @@ public class DateFormatter
     /// <returns>La fecha convertida al formato "yyyy-mm-dd".</returns>
     public static string ChangeFormat(string date)
     {
+        int l = date.Length;
+
+        if(l != 10)
+        {
+            return "";
+        }
+        
         if (date.Substring(6).Count() != 4)
         {
             return "";
@@ -24,6 +32,9 @@ public class DateFormatter
         {
             return "";
         }
+
+        
+
         return date.Substring(6) + "-" + date.Substring(3, 2) + "-" + date.Substring(0, 2);
     }
 }

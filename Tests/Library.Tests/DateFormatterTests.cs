@@ -19,4 +19,24 @@ public class Tests
 
         Assert.That(actual, Is.EqualTo(expected));
     }
+
+    [Test]
+    public void TestFechaEnBlanco()
+    {
+        const string input = "";
+        const string expected = "";
+        string actual = DateFormatter.ChangeFormat(input);
+
+        Assert.That(actual, Is.EqualTo(expected));
+    }
+
+     /*[Test]
+    public void TestFechaCorrecta()
+    {
+        const string input = "30/07/2000";
+        const string expected = "2000-07-30";
+        string actual = DateFormatter.ChangeFormat(input);
+
+        Assert.That(actual, Is.EqualTo(expected));
+    } */
 }
